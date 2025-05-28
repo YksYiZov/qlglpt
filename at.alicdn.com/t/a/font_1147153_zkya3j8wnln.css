@@ -1,0 +1,399 @@
+@font-face {
+  font-family: "gui-icons"; /* Project id 1147153 */
+  src: url('font_1147153_zkya3j8wnln85ad.woff2?t=1671694652681') format('woff2'),
+       url('font_1147153_zkya3j8wnln85ad.woff?t=1671694652681') format('woff'),
+       url('font_1147153_zkya3j8wnln85ad.ttf?t=1671694652681') format('truetype');
+}
+
+.gui-icons {
+  font-family: "gui-icons" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.datav-gui-icon-fit-height:before {
+  content: "\e747";
+}
+
+.datav-gui-icon-fit-height-scrollable:before {
+  content: "\e748";
+}
+
+.datav-gui-icon-screen-center:before {
+  content: "\e749";
+}
+
+.datav-gui-icon-full-screen:before {
+  content: "\e74a";
+}
+
+.datav-gui-icon-fit-width:before {
+  content: "\e74b";
+}
+
+.datav-gui-icon-spacing-vertical:before {
+  content: "\e755";
+}
+
+.datav-gui-icon-spacing-horizontal:before {
+  content: "\e756";
+}
+
+.datav-gui-icon-lock:before {
+  content: "\e64a";
+}
+
+.datav-gui-icon-unlock:before {
+  content: "\e65c";
+}
+
+.datav-gui-icon-fullscreen:before {
+  content: "\e663";
+}
+
+.datav-gui-icon-breadcrumbs:before {
+  content: "\e6dc";
+}
+
+.datav-gui-icon-setting:before {
+  content: "\e6f3";
+}
+
+.datav-gui-icon-others:before {
+  content: "\e6eb";
+}
+
+.datav-gui-icon-filter:before {
+  content: "\e6e9";
+}
+
+.datav-gui-icon-legend:before {
+  content: "\e6e8";
+}
+
+.datav-gui-icon-effect:before {
+  content: "\e6e6";
+}
+
+.datav-gui-icon-interaction:before {
+  content: "\e6e4";
+}
+
+.datav-gui-icon-animation:before {
+  content: "\e6e0";
+}
+
+.datav-gui-icon-graph:before {
+  content: "\e665";
+}
+
+.datav-gui-icon-coordinate:before {
+  content: "\e661";
+}
+
+.datav-gui-icon-table:before {
+  content: "\e6a3";
+}
+
+.datav-gui-icon-label:before {
+  content: "\e698";
+}
+
+.datav-gui-icon-general:before {
+  content: "\e699";
+}
+
+.datav-gui-icon-table-header:before {
+  content: "\e69b";
+}
+
+.datav-gui-icon-column-row:before {
+  content: "\e69c";
+}
+
+.datav-gui-icon-popup:before {
+  content: "\e6a5";
+}
+
+.datav-gui-icon-huabanbeifen51:before {
+  content: "\e6db";
+}
+
+.datav-gui-icon-huabanbeifen4:before {
+  content: "\e6da";
+}
+
+.datav-gui-icon-not-allowed:before {
+  content: "\e6d9";
+}
+
+.datav-gui-icon-text-align-right:before {
+  content: "\e6ab";
+}
+
+.datav-gui-icon-text-align-center:before {
+  content: "\e6ac";
+}
+
+.datav-gui-icon-text-align-left:before {
+  content: "\e6ad";
+}
+
+.datav-gui-icon-text-align-defaunt:before {
+  content: "\e6ae";
+}
+
+.datav-gui-icon-dashed-border:before {
+  content: "\e79c";
+}
+
+.datav-gui-icon-solid-border:before {
+  content: "\e70a";
+}
+
+.datav-gui-icon-none-border:before {
+  content: "\e692";
+}
+
+.datav-gui-icon-dotted-border:before {
+  content: "\e65b";
+}
+
+.datav-gui-icon-duoliebuju:before {
+  content: "\e6a9";
+}
+
+.datav-gui-icon-duohangbuju:before {
+  content: "\e6aa";
+}
+
+.datav-gui-icon-align-default:before {
+  content: "\e7bb";
+}
+
+.datav-gui-icon-animation-stop:before {
+  content: "\e6a0";
+}
+
+.datav-gui-icon-animation-pause:before {
+  content: "\e6a1";
+}
+
+.datav-gui-icon-animation-play:before {
+  content: "\e6a2";
+}
+
+.datav-gui-icon-position-center:before {
+  content: "\e641";
+}
+
+.datav-gui-icon-position-top:before {
+  content: "\e640";
+}
+
+.datav-gui-icon-position-left:before {
+  content: "\e63f";
+}
+
+.datav-gui-icon-position-bottom:before {
+  content: "\e63e";
+}
+
+.datav-gui-icon-position-right:before {
+  content: "\e63d";
+}
+
+.datav-gui-icon-align-left:before {
+  content: "\e649";
+}
+
+.datav-gui-icon-align-right:before {
+  content: "\e64c";
+}
+
+.datav-gui-icon-align-center:before {
+  content: "\e658";
+}
+
+.datav-gui-icon-align-horizontal:before {
+  content: "\e659";
+}
+
+.datav-gui-icon-align-vertical:before {
+  content: "\e65a";
+}
+
+.datav-gui-icon-align-middle:before {
+  content: "\e666";
+}
+
+.datav-gui-icon-align-bottom:before {
+  content: "\e675";
+}
+
+.datav-gui-icon-align-top:before {
+  content: "\e676";
+}
+
+.datav-gui-icon-pentagon:before {
+  content: "\e647";
+}
+
+.datav-gui-icon-pentacle:before {
+  content: "\e642";
+}
+
+.datav-gui-icon-triangle:before {
+  content: "\e643";
+}
+
+.datav-gui-icon-hexagon:before {
+  content: "\e644";
+}
+
+.datav-gui-icon-circle:before {
+  content: "\e646";
+}
+
+.datav-gui-icon-rectangle:before {
+  content: "\e648";
+}
+
+.datav-gui-icon-link:before {
+  content: "\e645";
+}
+
+.datav-gui-icon-percent-prefix:before {
+  content: "\e7bc";
+}
+
+.datav-gui-icon-left-bottom:before {
+  content: "\e7bd";
+}
+
+.datav-gui-icon-left-center:before {
+  content: "\e7be";
+}
+
+.datav-gui-icon-left-top:before {
+  content: "\e7bf";
+}
+
+.datav-gui-icon-right-bottom:before {
+  content: "\e7c0";
+}
+
+.datav-gui-icon-right-top:before {
+  content: "\e7c1";
+}
+
+.datav-gui-icon-axis:before {
+  content: "\e623";
+}
+
+.datav-gui-icon-bottom-center:before {
+  content: "\e624";
+}
+
+.datav-gui-icon-bottom-left:before {
+  content: "\e625";
+}
+
+.datav-gui-icon-click:before {
+  content: "\e626";
+}
+
+.datav-gui-icon-bottom-center-pos:before {
+  content: "\e627";
+}
+
+.datav-gui-icon-horizontal:before {
+  content: "\e628";
+}
+
+.datav-gui-icon-dashed-line:before {
+  content: "\e629";
+}
+
+.datav-gui-icon-right-center:before {
+  content: "\e7c2";
+}
+
+.datav-gui-icon-hover:before {
+  content: "\e62a";
+}
+
+.datav-gui-icon-item:before {
+  content: "\e62b";
+}
+
+.datav-gui-icon-middle-center-pos:before {
+  content: "\e62c";
+}
+
+.datav-gui-icon-right-outer-pos:before {
+  content: "\e62d";
+}
+
+.datav-gui-icon-middle-right-pos:before {
+  content: "\e62e";
+}
+
+.datav-gui-icon-top-center-pos:before {
+  content: "\e62f";
+}
+
+.datav-gui-icon-percent-suffix:before {
+  content: "\e630";
+}
+
+.datav-gui-icon-poly-line:before {
+  content: "\e631";
+}
+
+.datav-gui-icon-top-right:before {
+  content: "\e632";
+}
+
+.datav-gui-icon-top-left:before {
+  content: "\e633";
+}
+
+.datav-gui-icon-solid:before {
+  content: "\e634";
+}
+
+.datav-gui-icon-incline:before {
+  content: "\e635";
+}
+
+.datav-gui-icon-bottom-right:before {
+  content: "\e636";
+}
+
+.datav-gui-icon-percenter-prefix:before {
+  content: "\e637";
+}
+
+.datav-gui-icon-dot-line:before {
+  content: "\e638";
+}
+
+.datav-gui-icon-middle-left-pos:before {
+  content: "\e639";
+}
+
+.datav-gui-icon-smooth-line:before {
+  content: "\e63a";
+}
+
+.datav-gui-icon-top-center:before {
+  content: "\e63b";
+}
+
+.datav-gui-icon-vertical:before {
+  content: "\e63c";
+}
+

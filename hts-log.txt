@@ -1,0 +1,13 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 28 May 2025 18:30:11 at http://lcdata.laicun.wang/bd/main2.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "zh, en, *" http://lcdata.laicun.wang/bd/main2.html -O1 "D:\httrack\5.28" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+18:30:12	Warning: 	File not parsed, looks like binary: lcdata.laicun.wang/robots.txt
+18:38:23	Error: 	"Cancelled by User" (-1) at link lcdata.laicun.wang/bd/images/yc.mp4 (from lcdata.laicun.wang/bd/main2.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 9 minutes 38 seconds : 54 links scanned, 51 files written (12232948 bytes overall) [14306731 bytes received at 24752 bytes/sec], 6306750 bytes transferred using HTTP compression in 15 files, ratio 26%, 2.3 requests per connection
+(1 errors, 1 warnings, 0 messages)

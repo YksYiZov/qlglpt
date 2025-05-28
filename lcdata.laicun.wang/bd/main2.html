@@ -1,0 +1,1059 @@
+<html>
+
+<!-- Mirrored from lcdata.laicun.wang/bd/main2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 May 2025 10:30:12 GMT -->
+<head>
+    <meta charset="utf8">
+    <meta content="webkit" name="renderer">
+    <!-- <meta name="data-spm" content="datav"> -->
+    <title>麒麟监控数据平台</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #root {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link href="main1.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/apexcharts.min.js"></script>
+    <script src="js/flv.js"></script>
+</head>
+<body>
+<div id="root">
+    <div style="background-color:rgb(0, 0, 0);display: block;height: 100%;width: 100%">
+        <div id="bg" style="background-image:url(images/bg.png);display: block;height: 100%;width: 100%;background-size: 100% 100%;">
+            <div id="video">
+                <div class="datav-common-hoc" style="height:72.5%;position: absolute;width:71.4%;margin-right:1%;top:17%;z-index:1;right:0">
+                    <div style="display: block; height:100%; width: 100%;  position: absolute; transform: rotate(0deg) scaleX(1) scaleY(-1) rotateZ(360deg);">
+                        <div style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border-radius: inherit;">
+                            <div style="background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);  position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                        </div>
+                    </div>
+                    <video id="myVideo" autoplay="autoplay" loop="loop" poster="images/video.jpg" class="video-switch" style="object-fit: fill; width:100%; height:100%;z-index:1;opacity:0.3; " muted><source src="images/yc.mp4" ></video>
+                    <div style="margin-top: 10px">
+                        <div style="width: 100%; height: 7px; border-radius: inherit;">
+                            <div style="background-color: rgb(163, 165, 178); width: 100%; height: 7px; border-radius: inherit;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="header" style="height:10%">
+                <div id="header_bg" style="background-image: url(images/header_bg.png);display: block;width: 100%;min-height: 100px;background-size: 100%;background-repeat: no-repeat;position: relative">
+                    <div>
+                        <img src="images/TB1AgnntQvoK1RjSZPfXXXPKFXa-800-86.png" style="position: absolute;top:3px;left:16%" width="10%">
+                    </div>
+                    <div>
+                        <img src="images/TB1AgnntQvoK1RjSZPfXXXPKFXa-800-86.png" style="position: absolute;top:3px;right:15%;transform: scaleX(-1);" width="10%">
+                    </div>
+                    <div style="position: absolute;top:2rem;left:3rem;min-height: 5rem">
+                        <div style="height:5em;width:5em;background-image:url(images/logo_bg.png);background-size: 100%;color: white;padding: 10px;background-color:rgba(0, 0, 0, 0.5);float: left">
+                            <img src="images/logo.png" style="width:100%;"></div>
+                        <div style="color: white">
+                            <span class="content" style="font-weight: normal; font-family: arial, Arial,sans-serif;font-size:1.6rem;float: left;margin-left:1rem">麒麟监控数据看板</span>
+                            <span class="content" style="font-size:0.7rem;letter-spacing:0.28rem; text-overflow: ellipsis; white-space: nowrap; margin-left:1rem;color: #777">LAI CUN IOT DATA DASHBOARD</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div style="position: absolute;top:3%;right:3%;">
+                    <div class="btn" style="width: 78px; height: 77px;opacity: 0.25;justify-content: center; align-items: center; border-radius: 50%; user-select: none; background: rgba(255, 255, 255, 0); cursor: pointer;float: left">
+                        <img class="img" src="images/1631257165971-cVmfWobZ.svg" style="width: 46.8px; height: 46.2px; user-select: none; display: block;">
+                    </div>
+                    <div style="font-size: 22px;color: white;float: right;text-align: right">
+                        <span id="toady_data"></span><br>
+                        <span style="font-size: 16px;color: #999" id="toady_time">15:21:16</span>
+                    </div>
+                </div>
+            </div>
+            <style>
+                #other .tu1_group1{position: absolute;top:2.6rem;left:29.3rem;width:15rem}
+                #other .tu1_group2{position: absolute;top:2.6rem;left:59.3rem;width:15rem}
+                #other .tu1_group3{position: absolute;top:2.6rem;left:89.3rem;width:15rem}
+                #other .tu1_group4{position: absolute;top:4.2rem;left:31rem;width:15rem}
+                #other .tu1_group5{position: absolute;top:4.2rem;left:50rem;width:15rem}
+                #other .tu1_group6{position: absolute;top:4.2rem;left:68rem;width:15rem}
+                #other .tu1_group7{position: absolute;top:4.2rem;left:86rem;width:15rem}
+                #other .tu1_group1 img,#other .tu1_group2 img,#other .tu1_group3 img{width: 1.1rem;height: 1.1rem}
+                #other .tu1_group4 img,#other .tu1_group5 img,#other .tu1_group6 img,#other .tu1_group7 img{width: 1rem;height: 1rem}
+            </style>
+            <div id="other">
+                <div class="tu1_group1">
+                    <div style="display: block; height: 100%; width: 100%; opacity: 0.6; position: relative;">
+                        <div style="opacity: 0.6;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity:1;float: left;margin-right:1.4rem"><img src="images/1631257657617-R_MXZbca.png"></div>
+                        <div style="opacity: 0.4;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.3;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.2;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.1;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                    </div>
+                </div>
+                <div class="tu1_group2">
+                    <div style="display: block; height: 100%; width: 100%; opacity: 0.6; position: relative;">
+                        <div style="opacity: 0.6;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity:1;float: left;margin-right:1.4rem"><img src="images/1631257657617-R_MXZbca.png"></div>
+                        <div style="opacity: 0.4;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.3;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.2;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.1;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                    </div>
+                </div>
+                <div class="tu1_group3">
+                    <div style="display: block; height: 100%; width: 100%; opacity: 0.6; position: relative;">
+                        <div style="opacity: 0.6;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity:1;float: left;margin-right:1.4rem"><img src="images/1631257657617-R_MXZbca.png"></div>
+                        <div style="opacity: 0.4;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.3;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.2;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.1;float: left;margin-right:1.4rem"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                    </div>
+                </div>
+
+                <div class="tu1_group4">
+                    <div style="display: block; height: 100%; width: 100%; opacity: 0.6; position: relative;">
+                        <div style="opacity: 0.6;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity:1;float: left;margin-right:1.5em"><img src="images/1631257657617-R_MXZbca.png"></div>
+                        <div style="opacity: 0.4;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.3;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.2;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.1;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                    </div>
+                </div>
+                <div class="tu1_group5">
+                    <div style="display: block; height: 100%; width: 100%; opacity: 0.6;">
+                        <div style="opacity: 0.6;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity:1;float: left;margin-right:1.5em"><img src="images/1631257657617-R_MXZbca.png"></div>
+                        <div style="opacity: 0.4;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.3;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.2;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.1;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                    </div>
+                </div>
+                <div class="tu1_group6">
+                    <div style="display: block; height: 100%; width: 100%; opacity: 0.6; position: relative;">
+                        <div style="opacity: 0.6;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity:1;float: left;margin-right:1.5em"><img src="images/1631257657617-R_MXZbca.png"></div>
+                        <div style="opacity: 0.4;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.3;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.2;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.1;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                    </div>
+                </div>
+                <div class="tu1_group7">
+                    <div style="display: block; height: 100%; width: 100%; opacity: 0.6; position: relative;">
+                        <div style="opacity: 0.6;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity:1;float: left;margin-right:1.5em"><img src="images/1631257657617-R_MXZbca.png"></div>
+                        <div style="opacity: 0.4;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.3;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.2;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                        <div style="opacity: 0.1;float: left;margin-right:1.5em"><img src="images/1631257651033-Kajd4_K6.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="main" style="height:72%;position: relative">
+                <Div id="left" style="width:24%;margin-left: 2.5%;margin-top: 1%;float: left">
+                    <div class="datav-common-hoc" style="display: block; height:49%; width: 100%;  position: relative;">
+                        <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246080031-YiQ2TwtG.png);  background-color: initial;cursor: pointer;text-align: center;color: #777;position: relative">
+                            <Div>DATA CENTER</Div>
+                            <Div style="text-align: left;padding: 0.4rem 0.7rem"><strong style="color: white;font-size: 1rem">物联网设备实时信息</strong></Div>
+                            <Div style="text-align: left;position:absolute;bottom:0.8rem;width:100%;height:50%;overflow: hidden;right: 0.3rem">
+                                <div id="chart2" style="width:120%;"></div>
+                            </Div>
+                            <Div style="text-align: left;position:absolute;top:5.8rem;width:85%;height:30%;left: 0.3rem">
+                               <div style="width:30%;float: left">
+                                   <div id="chart3" ></div>
+                                   <div style="text-align: center;margin-top: -1rem;font-size: 0.7rem">
+                                       <span style="color: #16a085;font-size: 0.9rem">112mg/kg</span><br>
+                                       氮含量</div>
+                               </div>
+                                <div style="width:30%;float: left"><div id="chart4" ></div>
+                                    <div style="text-align: center;margin-top: -1rem;font-size: 0.7rem">
+                                        <span style="color: #f39c12;font-size: 0.9rem">41mg/kg</span><br>
+                                        磷含量</div>
+                                </div>
+                                <div style="width:30%;float: left"><div id="chart5" ></div>
+                                    <div style="text-align: center;margin-top: -1rem;font-size: 0.7rem">
+                                        <span style="color: #c0392b;font-size: 0.9rem">167mg/kg</span><br>
+                                        钾含量</div>
+                                </div>
+                            </Div>
+                            <Div style="text-align: left;position:absolute;top:2.2rem;width:15%;height:30%;right: 0.7rem;font-size: 0.7rem;color: white">
+                                温度<br>
+                                <span style="font-size: 1.3rem">12.1℃</span><br><br>
+                                湿度<br>
+                                <span style="font-size: 1.3rem">31.2%</span><br>
+                            </Div>
+                        </div>
+
+                    </div>
+
+                    <div class="datav-common-hoc" style="display: block;height:49%; width: 100%;  position: relative;margin-top: 2%">
+                        <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246080031-YiQ2TwtG.png);  background-color: initial;cursor: pointer;text-align: center;color: #777;position: relative">
+                            <div style="display: block; height: 200%; width: 100%; opacity: 0.3; position: absolute; transform: rotate(0deg) scaleX(1) scaleY(-1) rotateZ(360deg);">
+                                <div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-radius: inherit;">
+                                    <div style="background-image: linear-gradient(0deg, rgb(11, 104, 109) 0%, rgba(11, 104, 109, 0) 30%);  position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border-radius: inherit;"></div>
+                                </div>
+                            </div>
+                            <Div>DATA CENTER</Div>
+                            <Div style="padding:4% 4%">
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-right:8%;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;position: relative">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器1#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">空气温度</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70a0de">12.1
+                                            <span style="font-size: 0.7rem;color: #aaa">℃</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器2#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">空气湿度</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70deae">31.4
+                                            <span style="font-size: 0.7rem;color: #aaa">%</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-right:8%;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器3#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">氮含量</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70deae">41
+                                            <span style="font-size: 0.7rem;color: #aaa">mg/kg</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器4#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">磷含量</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70deae">122
+                                            <span style="font-size: 0.7rem;color: #aaa">mg/kg</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-right:8%;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器5#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">钾含量</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70deae">102
+                                            <span style="font-size: 0.7rem;color: #aaa">mg/kg</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器6#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">电导率</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70deae">0.4
+                                            <span style="font-size: 0.7rem;color: #aaa">mS/cm</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-right:8%;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器7#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">二氧化碳</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #d7de70">640
+                                            <span style="font-size: 0.7rem;color: #aaa">ppm</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器8#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">土壤湿度</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70deae">34.2
+                                            <span style="font-size: 0.7rem;color: #aaa">%</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-right:8%;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器9#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">土壤温度</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #70deae">-2.1
+                                            <span style="font-size: 0.7rem;color: #aaa">℃</span></div>
+                                    </div>
+                                </div>
+                                <div class="datav-common-hoc" style="display: block; height:15%; width:46%;float: left;margin-bottom: 1%">
+                                    <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246123067-QGIVBK1-.png); cursor: pointer;">
+                                        <img src="images/O1CN01qSnJCV23MsyH8aEkE_%21%216000000007242-2-tps-100-100.png" style="height:1.6rem;position: absolute;left:3%; top: 25%">
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;font-size: 0.8rem;color: #aaa">
+                                            <span>探测器10#</span><br>
+                                            <span style="color: rgb(112, 215, 222)">光照强度</span>
+                                        </div>
+                                        <div style="text-align: left;padding: 0.5rem 0 0 2.4rem;position: absolute;left:36%; top:12%;font-size: 1.2rem;color: #de7770">3674
+                                            <span style="font-size: 0.7rem;color: #aaa">Lux</span></div>
+                                    </div>
+                                </div>
+                            </Div>
+                        </div>
+
+                    </div>
+                </Div>
+                <div id="right" style="float:right;width:71.5%;margin-right:1%;position:relative">
+                    <div style="display: block; height:10rem; width: 100%;position: relative;z-index: 2">
+                        <div class="datav-com-wrapper"  style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246830482-3B5JZLRq.png); mask-image: none; mask-repeat: initial; mask-size: initial; background-color: initial; border-radius: 0; cursor: pointer;">
+                            <div style="display:block;width: 10rem;padding-top:1.7rem;margin-left:1rem;float: left">
+                                <div style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/title_bg_active.png); background-color: initial;cursor: pointer;min-height:2.2rem;text-align: center;line-height: 2.2rem;font-size: 1.1rem">
+                                    麒麟育苗大数据
+                                </div>
+                            </div>
+<!--                            <div style="display:block;width: 10rem;padding-top:1.7rem;margin-left: 1%;float: left">-->
+<!--                                <div style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/title_bg.png); background-color: initial; cursor: pointer;min-height:2.2rem;text-align: center;line-height: 2.2rem;font-size: 1.1rem;color: white">-->
+<!--                                    新农业大数据-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div style="display:block;width: 10rem;padding-top:1.7rem;margin-left: 1%;float: left">-->
+<!--                                <div style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/title_bg.png); background-color: initial; cursor: pointer;min-height:2.2rem;text-align: center;line-height: 2.2rem;font-size: 1.1rem;color: white">-->
+<!--                                    电商扶贫大数据-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div style="display:block;width: 10rem;padding-top:1.7rem;margin-left: 1%;float: left">-->
+<!--                                <div style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/title_bg.png); background-color: initial; border-radius: 0px; cursor: pointer;min-height:2.2rem;text-align: center;line-height: 2.2rem;font-size: 1.1rem;color: white">-->
+<!--                                    驻马店农业数据-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div style="display:block;width: 10rem;padding-top:1.7rem;margin-left: 1%;float: left">-->
+<!--                                <div style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/title_bg.png); background-color: initial;cursor: pointer;min-height:2.2rem;text-align: center;line-height: 2.2rem;font-size: 1.1rem;color: white">-->
+<!--                                    区域种植大数据-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+
+                    </div>
+                    <div class="datav-common-hoc" style="display: block; height:340px; width:28%; position: absolute;right:3%;top:220%;z-index: 2;background-size: 100% 100%; background-image: url(images/1631246091819-7piSw1TS.png);background-repeat: no-repeat;">
+                        <div class="datav-com-wrapper">
+                            <div style="padding:0.4rem 0 0 0.4rem;line-height:36px">
+                                <span class="content" style="color: rgb(112, 215, 222);background-image: none; background-clip: unset;font-size: 1rem;">苗棚监控：正常</span>
+                                <br>
+                                <span class="content" style="color:white;background-image: none; background-clip: unset;font-size:1.2rem;margin-top: 10px">设备型号：VIDEO-W-012</span>
+                            </div>
+                            <div class="datav-com-wrapper" style="background-repeat: no-repeat; background-size:100% 100%; background-image: url(images/1631259492725--AfWoOR_.gif);cursor: pointer;width: 98%;height:62%;margin: 0 auto;margin-top:18px">
+                                <div style="text-align: center;"> <video id="player1" width="98%" height="240" muted preload="auto" controls="controls"><source src="images/yc.mp4"></video></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: absolute;top:50%;left:1%;z-index: 2;color: white;line-height:2.5rem">
+                        编号：2442#<br>
+                        <img src="images/c55279d46d8a6142eb4595f760ebaf67.png">
+                    </div>
+                    <style>
+                        .bigCon {
+                            animation: scrollText 30s linear infinite; /* 设置动画名称、持续时间、速度曲线和无限次重复 */
+                        }
+                        @keyframes scrollText {
+                            from{
+                                transform: translateY(0);
+                            }
+                            to{
+                                transform: translateY(-100%);
+                            }
+                        }
+                        @keyframes scroll {
+                         0%   { transform: translateY(0); }
+                        100% { transform: translateY(-100%); }
+                        }
+                    </style>
+                    <div class="datav-com-wrapper" style="overflow: hidden; -webkit-font-smoothing: subpixel-antialiased;z-index: 2;position: absolute;top:104%;left:1%;border-left: 2px solid #ccc;padding-left: 2rem">
+                        <div class="bigCon">
+                            <div class="content" style="text-align: left; color: rgb(164, 229, 255); font-weight: lighter;font-size: 11px; line-height: 24px;word-break: break-all;">
+                                探测器种类：2442#<br>
+                                地区20#<br>
+                                处置状态:正常<br>
+                                氮：32<br>
+                                磷：86<br>
+                                钾：188<br>
+                                土壤湿度：65%<br>
+                                土壤温度：21°C<br>
+                                土壤PH值：7.6<br>
+                                土壤电导率：56<br>
+                                土壤盐分：0.78<br>
+                                土壤含水量：502<br>
+                                报错设备 KL9161,QF367,TK8097
+                            </div>
+                        </div>
+                    </div>
+                    <div class="datav-com-wrapper" style="overflow: hidden;z-index: 2;position: absolute;top:410%;left:1%;padding-left: 2rem">
+                        <div>
+                            <strong style="color: #aaa">在线：</strong><span style="color: white">14</span>&nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: #aaa">离线</strong>：<span style="color: white">0</span><br><br>
+                            <div class="content" style="text-align: left; color:#ccc; font-weight: lighter;font-size: 10px; line-height:16px;word-break: break-all;">
+                                探测器种类：2442#<br>
+                                地区20#<br>
+                                处置状态:正常<br>
+                                氮：32<br>
+                                磷：86<br>
+                                钾：188<br>
+                                报错设备 KL9161,QF367,TK8097
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="color:rgba(255, 255, 255, 0.6);font-weight:normal;z-index: 2;position: absolute;right:0;top:60%">
+
+                        <div style="white-space: nowrap;margin-bottom: 18px;line-height:10px;">
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgb(255, 255, 255);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">48112</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgb(255, 255, 255);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">78454</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgba(255, 255, 255, 0.6);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">22991</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:#79daff;vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">43965</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgba(255, 255, 255, 0.6);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">84521</span>
+
+                            </div>
+
+                        </div>
+
+                        <div style="white-space: nowrap;margin-bottom: 18px;line-height:10px;">
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgba(255, 255, 255, 0.6);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">51215</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgba(20, 255, 127, 0.7);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">98451</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:#ff842f;vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">63251</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgba(255, 255, 255, 0.6);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">98451</span>
+
+                            </div>
+
+                            <div style="margin-right: 36px;display:inline-block;white-space: nowrap;">
+
+                                <span style="width:10px;height:10px;display:inline-block;border-radius:0%;background-color:rgba(20, 255, 244, 0.7);vertical-align: middle;transform: rotate(0deg);margin-right: 0px"></span>
+
+                                <span style="font-size: 10px;display:inline-block;vertical-align: middle;">65214</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div id="chart" style="position: absolute;top:460%;right:2%;height:10%;width:30%;z-index: 2"></div>
+                </div>
+            </div>
+            <div id="bottom" style="height:18%;clear:both;width: 100%;overflow: hidden">
+                <div style="display: block; height: 100%; width: 100%;  position: relative;background-repeat: no-repeat; background-size: 100% 100%; background-image: url(images/1631246085778-vmUH7FUu.png);cursor: pointer;margin-left: 2.5%;background-position:left bottom">
+                    <div id="bottom_left" style="width:22%;margin-left:1%;margin-top:1.2%;float: left">
+                        <div style="font-size:1rem;color: white">
+                            物联网探测数据<br>
+                            <span style="color: #218c74;font-size: 0.7rem">数据更新有一定延迟</span>
+                            <br>
+                            <table style="width: 100%;color:#1abc9c;font-size: 0.8rem;line-height:1.4">
+                                <tr>
+                                    <td style="font-size: 0.5rem;color: white">1#</td>
+                                    <td style="color: white">61mg/Kg</td>
+                                    <td>122mg/Kg</td>
+                                    <td>74mg/Kg</td>
+                                    <td>-2.1℃</td>
+                                    <td>21%</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 0.5rem;color: white">2#</td>
+                                    <td style="color: white">44mg/Kg</td>
+                                    <td>145mg/Kg</td>
+                                    <td>89mg/Kg</td>
+                                    <td>-4.1℃</td>
+                                    <td>11%</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 0.5rem;color: white">3#</td>
+                                    <td style="color: white">72mg/Kg</td>
+                                    <td>131mg/Kg</td>
+                                    <td>31mg/Kg</td>
+                                    <td>-3.2℃</td>
+                                    <td>14%</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 0.5rem;color: white">4#</td>
+                                    <td style="color: white">56mg/Kg</td>
+                                    <td>166mg/Kg</td>
+                                    <td>65mg/Kg</td>
+                                    <td>-1.1℃</td>
+                                    <td>16%</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 0.5rem;color: white">5#</td>
+                                    <td style="color: white">69mg/Kg</td>
+                                    <td>134mg/Kg</td>
+                                    <td>71mg/Kg</td>
+                                    <td>-5.2℃</td>
+                                    <td>12%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="bottom_right" style="float: right;width: 73.5%;margin-right:1%;padding-top:5.5%;text-align: left;position: relative">
+                        <div style="float: left;width:35%">
+                            <div class="datav-com-wrapper" style="float: left;width:50%">
+                               <img src="images/TB1UffotQvoK1RjSZFwXXciCFXa-800-200.png" style="height: 4rem">
+                            </div>
+                            <div class="datav-com-wrapper" style="float: left;width:50%">
+                                <img src="images/TB1UffotQvoK1RjSZFwXXciCFXa-800-200.png" style="transform: scaleX(-1);height: 4rem">
+                            </div>
+                        </div>
+                        <div id="chart1" style="float: left;width:40%;margin-top: -2rem"></div>
+                        <div style="float: right;width:25%;text-align: right;padding-right:4%">
+                            <div class="datav-com-wrapper">
+                                <img src="images/TB16KbftSzqK1RjSZPxXXc4tVXa-800-171.png" style="transform: scaleX(-1);height: 4rem">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+$(document).ready(function() {
+    // var video = document.getElementById("myVideo");
+    // video.playbackRate = 0.5;
+    // video.addEventListener("ratechange", function () {
+    //     console.log("播放速度改变为：" + video.playbackRate);
+    // });
+});
+</script>
+<script>
+    var trigoStrength = 3;
+    var iteration = 11;
+
+    function getRandom(nums=10) {
+        var i = iteration;
+       // return ((Math.sin(i / trigoStrength) * (i / trigoStrength) + i / trigoStrength + 1) * (trigoStrength * 2));
+        return (Math.random() * 2 - 1)*nums;
+    }
+
+    function getRandom2(nums=10) {
+        var i = iteration;
+        // return ((Math.sin(i / trigoStrength) * (i / trigoStrength) + i / trigoStrength + 1) * (trigoStrength * 2));
+        return (Math.random() * 2 - 1)+nums;
+    }
+
+    function generateMinuteWiseTimeSeries(baseval,count,nums=10) {
+        var i = 0;
+        var series = [];
+        while (i < count) {
+            var x = baseval;
+            //var y = (Math.sin(i / trigoStrength) * (i / trigoStrength) + i / trigoStrength + 1) * (trigoStrength * 2);
+            var y = (Math.random() * 2 - 1)*nums;
+            series.push([x, y]);
+            baseval += 300000;
+            i++;
+        }
+        return series;
+    }
+
+    function generateMinuteWiseTimeSeries2(baseval,count,nums) {
+        var i = 0;
+        var series = [];
+        while (i < count) {
+            var x = baseval;
+            //var y = (Math.sin(i / trigoStrength) * (i / trigoStrength) + i / trigoStrength + 1) * (trigoStrength * 2);
+            var y = (Math.random() * 2 - 1)+nums;
+            series.push([x, y]);
+            baseval += 300000;
+            i++;
+        }
+        return series;
+    }
+
+    var xdata=generateMinuteWiseTimeSeries(new Date("2024-02-01 00:00:00").getTime(), 24,10);
+    var xdata1=generateMinuteWiseTimeSeries2(new Date("2024-01-01 00:00:00").getTime(), 24,10);
+
+    var options = {
+        chart: {
+            type: 'bar',
+            height: '70%',
+            width: '100%',
+            toolbar: {
+                show: false,
+            }
+        },
+        grid: {
+            show: false,
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '30%',
+                endingShape: 'rounded',
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+
+        tooltip: {
+            enabled: false,
+        },
+        colors: ['#74dcdc'],
+        series: [{
+            name: 'sales',
+            data: [30,40,35,50,49,60,70,91,125]
+        }],
+        xaxis: {
+            categories: [2015,2016,2017,2018,2019,2020,2021,2022,2023],
+            axisTicks: {
+                show: false
+            },
+            axisBorder: {
+                show: true,
+                color: 'green',
+                height: 3,
+                width: '100%',
+                offsetX: 0,
+                offsetY: 0
+            },
+            labels: {
+                show: true,
+                style: {
+                    colors: 'white',
+                    fontSize: '12px',
+                }
+            }
+        },
+        yaxis: {
+            show: false,
+        }
+    }
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+
+
+    var options1 = {
+        series: [{
+            name: 'Cash Flow',
+            data: xdata
+        }],
+        chart: {
+            type: 'bar',
+            height: '60%',
+            width: '100%',
+            toolbar: {
+                show: false,
+            }
+        },
+        grid: {
+            show: false,
+        },
+        plotOptions: {
+            bar: {
+                colors: {
+                    ranges: [{
+                        from: -100,
+                        to: -46,
+                        color: '#F15B46'
+                    }, {
+                        from: -45,
+                        to: 0,
+                        color: '#FEB019'
+                    }]
+                },
+                columnWidth: '80%',
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+
+        tooltip: {
+            enabled: false,
+        },
+        yaxis: {
+            show: false,
+        },
+        xaxis: {
+            type: 'datetime',
+            axisTicks: {
+                show: false
+            },
+            range: 7800000,
+            labels: {
+                show: false,
+                rotate: -90,
+                style: {
+                    colors: 'white',
+                    fontSize: '12px',
+                }
+            },
+            axisBorder: {
+                show: false,
+                color: 'green',
+                height: 3,
+                width: '100%',
+                offsetX: 0,
+                offsetY: 0
+            },
+        }
+    };
+
+    var chart1 = new ApexCharts(document.querySelector("#chart1"), options1);
+    chart1.render();
+
+
+    var options2 = {
+        series: [{
+            name: 'Cash Flow',
+            data: xdata1
+        }],
+        chart: {
+            type: 'area',
+            height: '100%',
+            width: '100%',
+            toolbar: {
+                show: false,
+            }
+        },
+        grid: {
+            show: false,
+        },
+        fill: {
+            colors: '#74dcdc',
+            opacity: 0.5,
+            type: 'gradient',
+            gradient: {
+                shadeIntensity: 1,
+                inverseColors: false,
+                opacityFrom: 0.65,
+                opacityTo: 0.05,
+                stops: [20, 100, 100, 100]
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+
+        tooltip: {
+            enabled: false,
+        },
+        yaxis: {
+            show: false,
+            min: 2,
+            max: 12
+        },
+        xaxis: {
+            type: 'datetime',
+            axisTicks: {
+                show: false
+            },
+            range: 7000000,
+            labels: {
+                show: false,
+                rotate: 1,
+                style: {
+                    colors: 'white',
+                    fontSize: '12px',
+                }
+            },
+            axisBorder: {
+                show: false,
+                color: 'green',
+                height: 3,
+                width: '100%',
+                offsetX: 0,
+                offsetY: 0
+            },
+        }
+    };
+    var chart2 = new ApexCharts(document.querySelector("#chart2"), options2);
+    chart2.render();
+
+    window.setInterval(function () {
+        iteration++;
+        chart1.updateSeries([
+            {
+                data: [
+                    ...chart1.w.config.series[0].data,
+                    [chart1.w.globals.maxX + 300000, getRandom()]] }]);
+        chart2.updateSeries([
+            {
+                data: [
+                    ...chart2.w.config.series[0].data,
+                    [chart2.w.globals.maxX + 300000, getRandom2(10)]] }]);
+    }, 5000);
+
+    var options3 = {
+        series: [41],
+        chart: {
+            type: 'radialBar',
+            offsetY: -20,
+            sparkline: {
+                enabled: true
+            }
+        },
+        plotOptions: {
+            radialBar: {
+                startAngle: -90,
+                endAngle: 90,
+                track: {
+                    background: "#e7e7e7",
+                    strokeWidth: '97%',
+                    margin: 5, // margin is in pixels
+                    dropShadow: {
+                        enabled: true,
+                        top: 2,
+                        left: 0,
+                        color: '#999',
+                        opacity: 1,
+                        blur: 2
+                    }
+                },
+                dataLabels: {
+                    name: {
+                        show: false
+                    },
+                    value: {
+                        show: false,
+                        offsetY: -2,
+                        fontSize: '22px'
+                    }
+                }
+            }
+        },
+        colors: ['#448484'],
+        grid: {
+            padding: {
+                top: -10
+            }
+        },
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'dark',
+                shadeIntensity: 0.4,
+                inverseColors: false,
+                opacityFrom: 1,
+                opacityTo: 1,
+                stops: [0, 50, 53, 91]
+            },
+        },
+        labels: ['Average Results'],
+    };
+    var chart3 = new ApexCharts(document.querySelector("#chart3"), options3);
+    chart3.render();
+
+    var options4 = {
+        series: [55],
+        chart: {
+            type: 'radialBar',
+            offsetY: -20,
+            sparkline: {
+                enabled: true
+            }
+        },
+        plotOptions: {
+            radialBar: {
+                startAngle: -90,
+                endAngle: 90,
+                track: {
+                    background: "#e7e7e7",
+                    strokeWidth: '97%',
+                    margin: 5, // margin is in pixels
+                    dropShadow: {
+                        enabled: true,
+                        top: 2,
+                        left: 0,
+                        color: '#999',
+                        opacity: 1,
+                        blur: 2
+                    }
+                },
+                dataLabels: {
+                    name: {
+                        show: false
+                    },
+                    value: {
+                        show: false,
+                        offsetY: -2,
+                        fontSize: '22px'
+                    }
+                }
+            }
+        },
+        colors: ['#448484'],
+        grid: {
+            padding: {
+                top: -10
+            }
+        },
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'dark',
+                shadeIntensity: 0.4,
+                inverseColors: false,
+                opacityFrom: 1,
+                opacityTo: 1,
+                stops: [0, 50, 53, 91]
+            },
+        },
+        labels: ['Average Results'],
+    };
+    var chart4 = new ApexCharts(document.querySelector("#chart4"), options4);
+    chart4.render();
+
+    var options5 = {
+        series: [88],
+        chart: {
+            type: 'radialBar',
+            offsetY: -20,
+            sparkline: {
+                enabled: true
+            }
+        },
+        plotOptions: {
+            radialBar: {
+                startAngle: -90,
+                endAngle: 90,
+                track: {
+                    background: "#e7e7e7",
+                    strokeWidth: '97%',
+                    margin: 5, // margin is in pixels
+                    dropShadow: {
+                        enabled: true,
+                        top: 2,
+                        left: 0,
+                        color: '#999',
+                        opacity: 1,
+                        blur: 2
+                    }
+                },
+                dataLabels: {
+                    name: {
+                        show: false
+                    },
+                    value: {
+                        show: false,
+                        offsetY: -2,
+                        fontSize: '22px'
+                    }
+                }
+            }
+        },
+        colors: ['#448484'],
+        grid: {
+            padding: {
+                top: -10
+            }
+        },
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'dark',
+                shadeIntensity: 0.4,
+                inverseColors: false,
+                opacityFrom: 1,
+                opacityTo: 1,
+                stops: [0, 50, 53, 91]
+            },
+        },
+        labels: ['Average Results'],
+    };
+    var chart5 = new ApexCharts(document.querySelector("#chart5"), options5);
+    chart5.render();
+</script>
+<!-- <script>
+    if (flvjs.isSupported()) {
+        var videoElement = document.getElementById('player1');
+        var flvPlayer = flvjs.createPlayer({
+            type: 'flv',
+            url: 'https://rtmp01open.ys7.com:9188/v3/openlive/E96519209_1_1.flv?expire=1740885076&id=685806772632899584&t=a9e49a3c4e28adcecec3ad58c27e442de19020d9e392d637230cc878d945751e&ev=100'
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+    }
+
+    $(document).ready(function () {
+        function showTime() {
+            var today = new Date;
+            var y = today.getFullYear();
+            var M = today.getMonth() + 1;
+            var d = today.getDate();
+            var w = today.getDay();
+            var h = today.getHours().toString().padStart(2, '0');
+            var m = today.getMinutes().toString().padStart(2, '0');
+            var s = today.getSeconds().toString().padStart(2, '0');
+            var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            $("#toady_data").html(y + '年' + M + '月' + d + '日');
+            $("#toady_time").html(h + ':' + m + ':' + s);
+        }
+        showTime();                     //先调用下，否则还需一秒后才呈现
+        setInterval(showTime, 1000);    //每1秒(1000毫秒)后调用 showTime()
+    })
+</script> -->
